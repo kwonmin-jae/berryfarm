@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>berryfarm</title>
+    <link rel="stylesheet" type="text/css" href="./joinstyle.css">
+    <link rel="stylesheet" type="text/css" href="./joindefault.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./style.js"></script>
+</head>
+
+<body>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $(".open").on('click',function(){
+                $(".popup2").show();
+                $(".dim").show();
+            });
+            $(".popup2 .close").on('click',function(){
+                $(this).parent().hide();
+                $(".dim").hide();
+            });
+        });
+        </script>
+        </head>
+        <body>
+            
+            <!-- <a href="#" class="open">팝업열기</a> -->
+        
+            <div class="popup2">
+                <h2>회원가입</h2>
+                <div class="con">
+                    <table class="type1">
+                    <caption>
+                        <details class="hide">
+                            <summary>회원가입 폼</summary>
+                            <div>이름, 연락처, 메모, 적용가능한혜택을 입력 또는 선택하는 표</div>
+                        </details>
+                    </caption>
+                    <colgroup>
+                    <col style="width: 111px">
+                    <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th><label for="txt1">이름</label><span>*<em class="hide">필수입력</em></span></th>
+                        <td><input type="text" id="txt10" placeholder="이름을 입력해 주세요."></td>
+                    </tr>
+                    <tr>
+                        <th><label for="txt2">연락처</label><span>*<em class="hide">필수입력</em></span></th>
+                        <td><input type="tel" id="txt20" placeholder="숫자만 입력해주세요."></td>
+                    </tr>
+                    <tr>
+                        <th><label for="txt3">메모</label><em>(0/300 byte)</em></th>
+                        <td><textarea id="txt30" placeholder="메모 사항이 있으시면 메모로 남겨주세요."></textarea></td>
+                    </tr>
+                    <!-- <tr>
+                        <th>적용 가능한<br>혜택이 있나요?</th>
+                        <td>
+                            <ul>
+                            <li><input type="checkbox" id="chk1_1"><label for="chk1_1">T멤버십 회원이에요.</label></li>
+                            <li><input type="checkbox" id="chk1_2"><label for="chk1_2">지금 브로드밴드 인터넷을 쓰고 있어요.</label></li>
+                            <li><input type="checkbox" id="chk1_3"><label for="chk1_3">브로드밴드 인터넷을 신규 가입하여 결합하고 싶어요.</label></li>
+                            </ul>
+                        </td>
+                    </tr> -->
+                    </tbody>
+                    </table>
+                    <div class="agree">
+                        <input type="checkbox" id="chk1_4"><label for="chk1_4"><span>[필수]</span>개인정보 수집 및 이용 동의</label>
+                        <a href="#" class="view">전문보기</a>
+                    </div>
+                </div>
+                <div class="txt_center">
+                    <a href="#" class="btn_type1">회원가입</a>
+                </div>
+                <a href="#" class="close">닫기</a>
+            </div>
+            <div class="dim"></div>
+
+    <!-- 슬라이드 라이브러리 1-1 -->
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #fff;
+            /* 배경색을 밝게 */
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .autoplay-progress {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--swiper-theme-color);
+        }
+
+        .autoplay-progress svg {
+            --progress: 0;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            stroke-width: 4px;
+            stroke: var(--swiper-theme-color);
+            fill: none;
+            stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+            stroke-dasharray: 125.6;
+            transform: rotate(-90deg);
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+
+            /* 숨기기 */
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .show {
+            opacity: 1;
+            z-index: 1000;
+            transition: all 0.5s;
+        }
+
+        .window {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            /* box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3); */
+            /* 임시 지정 */
+            width: 500px;
+            height: 840px;
+            /* 팝업창 높이 */
+
+            /* 초기에 약간 아래에 배치 */
+            transform: translate(-50%, -40%);
+        }
+
+        .show .popup {
+            transform: translate(-50%, -50%);
+            transition: all 0.5s;
+        }
+
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .tg td {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg .tg-xe4f {
+            background-color: #ffffff;
+            border-color: #9b9b9b;
+            color: #9b9b9b;
+            text-align: center;
+            vertical-align: top
+        }
+
+        .tg .tg-c4sg {
+            background-color: #ffffff;
+            border-color: #9b9b9b;
+            text-align: center;
+            vertical-align: top;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .tg .tg-h3q5 {
+            background-color: #ffffff;
+            border-color: #9b9b9b;
+            color: #fe0000;
+            text-align: center;
+            vertical-align: top
+        }
+
+        .tg .tg-ebum {
+            background-color: #ffffff;
+            border-color: #9b9b9b;
+            color: #3166ff;
+            text-align: center;
+            vertical-align: top
+        }
+
+        .tg .tg-0lax {
+            background-color: #ffffff;
+            border-color: #9b9b9b;
+            text-align: center;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        span {
+            font-size: 14px;
+        }
+
+        .tablesize {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 500px;
+            padding-top: 50px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .label_content {
+            /* 감싸고 있는 제일 큰 div */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* div 안에 div */
+        .content {
+            display: none;
+            width: 500px;
+            height: 500px;
+            background: rgb(223, 223, 223);
+            border: 1px solid #eee;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px;
+        }
+
+        input:checked+label+.content {
+            display: block;
+        }
+
+        .content label {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        button {
+            padding: 5px;
+        }
+    </style>
+
+    <main>
+
+        <aside class="side-bar">
+            <section class="side-bar__icon-box">
+                <section class="side-bar__icon-1">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </section>
+            </section>
+            <ul>
+                <li>
+                    <a href="#"><i class="fa-solid fa-cat"></i> 이벤트</a>
+                    <ul>
+                        <li><a href="#">진행 중인 이벤트</a></li>
+                        <li><a href="#">진행 예정인 이벤트</a></li>
+                        <li><a href="#">마감된 이벤트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">구매후기</a>
+                    <ul>
+                        <li><a href="#">전체 구매후기</a></li>
+                        <li><a href="#">베스트 구매후기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">문의하기</a>
+                    <ul>
+                        <li><a href="#">문의하기</a></li>
+                        <li><a href="#">1:1 문의하기</a></li>
+                        <li><a href="#">자주묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">게시판</a>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">알려드립니다</a></li>
+                        <li><a href="#">자유게시판</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <!-- 상단 팝업 -->
+        <div class="flexbox popupdiv">
+            <button id="show">직거래 / 생과 / 냉동</button>
+            <div class="background">
+                <div class="window">
+                    <div class="popup">
+                        <button id="close">팝업닫기</button>
+                        <!-- 팝업 내용 -->
+                        <div class="tablesize">
+                            <table class="tg">
+                                <thead>
+                                    <tr>
+                                        <td class="tg-0lax" colspan="7">2024년 1월 직거래 일정</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th class="tg-h3q5">일</th>
+                                        <th class="tg-xe4f">월</th>
+                                        <th class="tg-xe4f">화</th>
+                                        <th class="tg-xe4f">수</th>
+                                        <th class="tg-xe4f">목</th>
+                                        <th class="tg-xe4f">금</th>
+                                        <th class="tg-ebum">토</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-h3q5"></td>
+                                        <td class="tg-c4sg">1</td>
+                                        <td class="tg-c4sg">2</td>
+                                        <td class="tg-c4sg">3</td>
+                                        <td class="tg-c4sg">4</td>
+                                        <td class="tg-c4sg">5</td>
+                                        <td class="tg-ebum">6</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-h3q5">7</td>
+                                        <td class="tg-c4sg">8</td>
+                                        <td class="tg-c4sg">9</td>
+                                        <td class="tg-c4sg">10</td>
+                                        <td class="tg-c4sg">11</td>
+                                        <td class="tg-c4sg">12</td>
+                                        <td class="tg-ebum">13</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-h3q5">14</td>
+                                        <td class="tg-c4sg">15</td>
+                                        <td class="tg-c4sg">16</td>
+                                        <td class="tg-c4sg">17</td>
+                                        <td class="tg-c4sg">18</td>
+                                        <td class="tg-c4sg">19</td>
+                                        <td class="tg-ebum">20</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-h3q5">21</td>
+                                        <td class="tg-c4sg">22</td>
+                                        <td class="tg-c4sg">23</td>
+                                        <td class="tg-c4sg">24</td>
+                                        <td class="tg-c4sg">25</td>
+                                        <td class="tg-c4sg">26</td>
+                                        <td class="tg-ebum">27</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-h3q5">28</td>
+                                        <td class="tg-c4sg">29</td>
+                                        <td class="tg-c4sg">30</td>
+                                        <td class="tg-c4sg">31</td>
+                                        <td class="tg-c4sg"></td>
+                                        <td class="tg-c4sg"></td>
+                                        <td class="tg-c4sg"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br><span>줄 그어져 있는 날짜에 예약 가능합니다.</span><br>
+                            <span>주말 및 공휴일은 휴무이므로 운영하지 않습니다.</span><br>
+                            <span>예약이나 기타 문의사항은 연락 부탁드립니다.</span><br>
+                            <span>010-0000-0000</span><br>
+                            <img src="./popupbar.png" alt="구분선이미지">
+                            <br><span>* 생과 판매 안내 *</span><br>
+                            <span>5월 말에서 6월 말까지가 수확시기 입니다.</span><br>
+                            <span>수확시기가 지나면 생과 판매는 중지됩니다.</span><br>
+                            <img src="./popupbar.png" alt="구분선이미지">
+                            <br><span>* 냉동 판매 안내 *</span><br>
+                            <span>냉동 산딸기는 판매시 냉동 식품 배송용 스티로폼 박스에 넣습니다.</span><br>
+                            <span>스티로폼 박스 안에 아이스팩을 많이 넣어 배송 중에 녹지 않게 합니다.</span><br>
+                        </div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 상단 메뉴1 -->
+        <div class="flexbox wrap">
+            <nav class="block top-menu0">
+                <ul class="inline-menu0">
+                    <li><a href="#">회원가입시 구매금액의 10% 적립</a></li>
+                    <li><a href="./loginpage.html">로그인</a></li>
+                    <li><a href="#" class="jointext open">회원가입</a></li>
+                    <li><a href="#">장바구니</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">주문조회</a></li>
+                    <li><a href="#">배송조회</a></li>
+                </ul>
+            </nav>
+            <!-- 다시 헤더 만들기 -->
+            <div class="logo1">
+                <div class="row40">
+                    <img src="./image20.png" alt="아이콘이미지">
+                    <img src="./image19.png" alt="아이콘이미지">
+                </div>
+                <div class="row">
+                    <span>
+                        <a href="./index.html" class="logotxt100">BERRYFARM</a>
+                        <a href="./index.html" class="logotxt101">MADE IN KOREA</a>
+                    </span>
+                </div>
+                <div class="row41">
+                    <img src="./vector1.png" alt="아이콘이미지">
+                </div>
+            </div>
+            <!-- 상단 메뉴2 -->
+            <nav class="block top-menu">
+                <ul class="inline-menu">
+                    <li><a href="./all.html">☰</a></li>
+                    <li><a href="./all.html">전체상품</a></li>
+                    <li><a href="./berry.html">산딸기</a></li>
+                    <li><a href="./berry2.html">냉동 산딸기</a></li>
+                    <li><a href="./asparagus.html">아스파라거스</a></li>
+                    <li><a href="./sweetpotato.html">고구마</a></li>
+                    <li><a href="./etc.html">기타상품</a></li>
+                    <!-- 오픈일 디데이 계산 -->
+                    <div id="count"></div>
+                </ul>
+            </nav>
+
+            <!-- 새로운 슬라이드 라이브러리 -->
+            <div class="slide10">
+                <!-- 슬라이드 라이브러리 1-2 -->
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./raspberry-1260048_1920.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./raspberry-3281675_1920.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./berries-5156976_1920.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./smoothies-3176371_1920.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./smoothies-2253423_1920.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./Frame352.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./raspberry-4049614_1920.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./raspberry-605169_1920.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./macarons-2548827_1280.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="autoplay-progress">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="20"></circle>
+                        </svg>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 슬라이드 라이브러리 1-3 -->
+            <!-- Initialize Swiper -->
+            <script>
+                function show() {
+                    document.querySelector(".background").className = "background show";
+                }
+
+                function close() {
+                    document.querySelector(".background").className = "background";
+                }
+
+                document.querySelector("#show").addEventListener("click", show);
+                document.querySelector("#close").addEventListener("click", close);
+                const progressCircle = document.querySelector(".autoplay-progress svg");
+                const progressContent = document.querySelector(".autoplay-progress span");
+                var swiper = new Swiper(".mySwiper", {
+                    spaceBetween: 30,
+                    centeredSlides: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev"
+                    },
+                    on: {
+                        autoplayTimeLeft(s, time, progress) {
+                            progressCircle.style.setProperty("--progress", 1 - progress);
+                            progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+                        }
+                    }
+                });
+            </script>
+
+            <!-- 상품 위의 메뉴1 -->
+            <div class="block bottom-info30 txt-sm30">
+                <div>
+                    <p>
+                        <span><a href="#">맛있는</a></span>
+                        <span><img src="./Frame555.png" alt="샘플상품"></span>
+                        <span><a href="#">산딸기</a></span>
+                    </p>
+                </div>
+            </div>
+            <!-- 상품 위의 메뉴2 -->
+            <div class="block bottom-info txt-sm">
+                <div>
+                    <p>
+                        <span><img src="./Frame353.png" alt="샘플상품"></span>
+                        <span><a href="#">MADE IN KOREA<br>맛있는 산딸기<br>맛있는 산딸기</a></span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span><img src="./Frame350.png" alt="샘플상품"></span>
+                        <span><a href="#">MADE IN KOREA<br>맛있는 산딸기<br>맛있는 산딸기</a></span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span><img src="./Frame351.png" alt="샘플상품"></span>
+                        <span><a href="#">MADE IN KOREA<br>맛있는 산딸기<br>맛있는 산딸기</a></span>
+                    </p>
+                </div>
+            </div>
+            <!-- 베스트 상품 로고 -->
+            <nav class="block top-menu00">
+                <ul class="inline-menu00">
+                    <li class="fontsize"><a href="#">BEST PRODUCT</a></li>
+                    <li class="fontsize10"><a href="#">가장 사랑받는 베스트상품</a></li>
+                    <!-- button -->
+                    <div class="box199"><a href="#">상품 더보기 ▷</a></div>
+                </ul>
+            </nav>
+            <!-- 상품리스트 메뉴 -->
+            <div class="element">
+                <ul class="grid4 multi-row">
+                    <li>
+                        <div class="thumbnail">
+                            <div class="img">
+                                <a href="#"><img src="./bestproduct1.png" alt="샘플상품"></a>
+                            </div>
+                            <div class="description txt-xs">
+                                <div class="pname">
+                                    <a href="#">산딸기 500g (1박스)</a>
+                                </div>
+                                <div class="pname">
+                                    <a href="#">15,000원</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail">
+                            <div class="img">
+                                <a href="#"><img src="./bestproduct1.png" alt="샘플상품"></a>
+                            </div>
+                            <div class="description txt-xs">
+                                <div class="pname">
+                                    <a href="#">산딸기 1kg (2박스)</a>
+                                </div>
+                                <div class="pname">
+                                    <a href="#">30,000원</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail">
+                            <div class="img">
+                                <a href="#"><img src="./bestproduct1.png" alt="샘플상품"></a>
+                            </div>
+                            <div class="description txt-xs">
+                                <div class="pname">
+                                    <a href="#">산딸기 1.5kg (3박스)</a>
+                                </div>
+                                <div class="pname">
+                                    <a href="#">45,000원</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="grid4 multi-row">
+                    <li>
+                        <div class="thumbnail">
+                            <div class="img">
+                                <a href="#"><img src="./bestproduct1.png" alt="샘플상품"></a>
+                            </div>
+                            <div class="description txt-xs">
+                                <div class="pname">
+                                    <a href="#">산딸기 2kg (4박스)</a>
+                                </div>
+                                <div class="pname">
+                                    <a href="#">60,000원</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail">
+                            <div class="img">
+                                <a href="#"><img src="./bestproduct1.png" alt="샘플상품"></a>
+                            </div>
+                            <div class="description txt-xs">
+                                <div class="pname">
+                                    <a href="#">산딸기 2.5kg (5박스)</a>
+                                </div>
+                                <div class="pname">
+                                    <a href="#">75,000원</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail">
+                            <div class="img">
+                                <a href="#"><img src="./bestproduct1.png" alt="샘플상품"></a>
+                            </div>
+                            <div class="description txt-xs">
+                                <div class="pname">
+                                    <a href="#">산딸기 3kg (6박스)</a>
+                                </div>
+                                <div class="pname">
+                                    <a href="#">90,000원</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 베스트 리뷰 -->
+            <nav class="block top-menu00">
+                <ul class="inline-menu00">
+                    <li class="fontsize"><a href="#">BEST REVIEW</a></li>
+                    <li class="fontsize10"><a href="#">고객님의 소중한 후기를 소개합니다.</a></li>
+                    <!-- button -->
+                    <div class="box99"><a href="#">후기 더보기 ▷</a></div>
+                </ul>
+            </nav>
+            <!-- block15 -->
+            <div class="block15">
+                <div class="block15-box">
+                    <div class="block8-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                    <div>
+                        <div class="boxtxt1">다음에 또 시킬거에요~</div>
+                        <div class="boxtxt2">정말 방금 따서 만든 딸기잼 같아요너무
+                            너무 신선한 느낌..모라고 설명하기가
+                            어렵네요..ㅎㅎ집에서 직접 만들어도
+                            봤는데이렇게 맛있지 않더라구여!!너무
+                            맛있어서 살찌겠어요!! ㅎㅎㅎ아이들도
+                            너무 잘먹습니다!</div>
+                        <div>
+                            <div class="box"><a href="#" class="buttoncolor">더보기 ▷</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block15-box">
+                    <div class="block8-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                    <div>
+                        <div class="boxtxt1">다음에 또 시킬거에요~</div>
+                        <div class="boxtxt2">정말 방금 따서 만든 딸기잼 같아요너무
+                            너무 신선한 느낌..모라고 설명하기가
+                            어렵네요..ㅎㅎ집에서 직접 만들어도
+                            봤는데이렇게 맛있지 않더라구여!!너무
+                            맛있어서 살찌겠어요!! ㅎㅎㅎ아이들도
+                            너무 잘먹습니다!</div>
+                        <div>
+                            <div class="box"><a href="#" class="buttoncolor">더보기 ▷</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block15-box">
+                    <div class="block8-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                    <div>
+                        <div class="boxtxt1">다음에 또 시킬거에요~</div>
+                        <div class="boxtxt2">정말 방금 따서 만든 딸기잼 같아요너무
+                            너무 신선한 느낌..모라고 설명하기가
+                            어렵네요..ㅎㅎ집에서 직접 만들어도
+                            봤는데이렇게 맛있지 않더라구여!!너무
+                            맛있어서 살찌겠어요!! ㅎㅎㅎ아이들도
+                            너무 잘먹습니다!</div>
+                        <div>
+                            <div class="box"><a href="#" class="buttoncolor">더보기 ▷</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block15-box">
+                    <div class="block8-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                    <div>
+                        <div class="boxtxt1">다음에 또 시킬거에요~</div>
+                        <div class="boxtxt2">정말 방금 따서 만든 딸기잼 같아요너무
+                            너무 신선한 느낌..모라고 설명하기가
+                            어렵네요..ㅎㅎ집에서 직접 만들어도
+                            봤는데이렇게 맛있지 않더라구여!!너무
+                            맛있어서 살찌겠어요!! ㅎㅎㅎ아이들도
+                            너무 잘먹습니다!</div>
+                        <div>
+                            <div class="box"><a href="#" class="buttoncolor">더보기 ▷</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="block top-menu00">
+                <ul class="inline-menu00">
+                    <li class="fontsize"><a href="#">INSTAGRAM</a></li>
+                </ul>
+            </nav>
+            <!-- block10 -->
+            <div class="block10">
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+            </div>
+            <div class="block10">
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+                <div class="block10-box">
+                    <div class="block10-box-color">
+                        <img src="./1685490897734-0.jpg" alt="샘플이미지">
+                    </div>
+                </div>
+            </div>
+            <!-- block50 -->
+            <div class="block50">
+                <div class="block50-box">
+                    <div class="block50-box-color">
+                        <div class="boxcolortxt1">BERRYFARM</div>
+                        <div class="boxcolortxt2">MADE IN KOREA</div>
+                        <div class="boxcolortxt3">회사소개 이용안내 개인정보처리방침 이용약관<br>
+                            법인명(상호) : 디자인교과서 대표자(성명) : 서수정<br>
+                            사업자 등록번호 : 000-0000-0000<br>
+                            통신판매업 신고 : 000-0000-0000 [사업자정보확인]<br>
+                            전화 : 1644-8198 팩스 : 1644-8198<br>
+                            주소 : 04387 서울특별시 용산구 서빙고로 17 (한강로3가)<br>
+                            용산 센트럴파크해링턴스퀘어 1층 1035호</div>
+                        <div class="boxcolortxt4">
+                            개인정보관리책임자 : 서수정(help@design-book.co.kr)<br>
+                            Copyright ⓒ 디자인교과서. All rights reserved.</div>
+                    </div>
+                </div>
+                <!-- block51 -->
+                <div class="block51-box">
+                    <div class="block51-box-color">
+                        <div class="boxcolortxt5">고객 상담 전화</div>
+                        <div class="boxcolortxt6">1644-0000</div>
+                        <div class="boxcolortxt7">
+                            평일 오전 10:00 - 오후 5:00 토.일.공휴일 휴무</div>
+                    </div>
+                    <div class="block51-box-color10">
+                        <div class="boxcolortxt8">무통장 입금계좌</div>
+                        <div class="boxcolortxt9">0123-456-78910</div>
+                        <div class="boxcolortxt10">
+                            신한은행 예금주: 디자인교과서</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+</body>
+
+</html>

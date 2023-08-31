@@ -1,0 +1,813 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; font-family: 'Noto Sans KR', sans-serif;}
+.inner{margin: auto; padding: 0 20px;}
+
+.contents::after{content: ''; display: block; clear: both;}
+
+a, a:active, a:visited, a:link {
+    text-decoration: none;
+    /* color: #ff6464; */
+}
+
+ul li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color:#333;
+}
+
+#menu {
+    font:bold 16px "malgun gothic";
+    width:700px;
+    height:50px;
+    background: #ccc;
+    color:black;
+    line-height: 50px; 
+    margin:0 auto;
+    text-align: center;
+}
+
+#menu > ul > li {
+    float:left;
+    width:140px;
+    position:relative;
+}
+#menu > ul > li > ul {
+    width:130px;
+    display:none;
+    position: absolute;
+    font-size:14px;
+    background: skyblue;
+}
+#menu > ul > li:hover > ul {
+    display:block;
+    
+}
+#menu > ul > li > ul > li:hover {
+    background: orange;
+    transition: ease 1s;
+}
+/* 플렉스박스 */
+.flexbox {
+    /* max-width: 1500px; */
+    min-width: 953px;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 0 auto;
+}
+/*** 다시 만든 헤더 ***/
+.logo1 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 210px;
+
+    height: 94px;
+}
+.logo1 img {
+    display: block;
+}
+.row40 {
+    display: flex;
+    gap: 3px;
+}
+.logotxt100 {
+    font-size:51px;
+    font-weight: bold;
+}
+.logotxt101 {
+    line-height: 20px;
+}
+.row {
+    display: flex;
+}
+.row span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ff6464;
+}
+/* 빈 div */
+.nulldiv {
+    height: 100px;
+}
+/* 슬라이드 라이브러리 div */
+.slide10 {
+    height: 500px; /* 슬라이드 높이 */
+}
+
+/* 로고 */
+.row h1{
+    font-size: 51px;
+    text-align: center;
+    letter-spacing: 7px;
+}
+.row li{
+    font-size: 20px;
+    align-self: center;
+    text-align: center;
+}
+ul.row{
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 0;  
+}
+/* 베스트 리뷰 로고 */
+ul .fontsize {
+    font-size: 40px;
+}
+li .fontsize10 {
+    font-size: 16px;
+}
+
+/* 부메뉴 텍스트 */
+li .fontsize a {
+    color: #000;
+}
+
+.block3 {
+    display: flex;
+    padding: 20px;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+}
+.block3 div {
+    padding: 0;
+    font-size: 40px;
+}
+
+.block4 {
+    display: flex;
+    padding: 20px;
+    gap: 0;
+}
+.block4 div {
+    padding: 0;
+}
+
+/* button */
+/* 후기 더보기 버튼 */
+.box99 {
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    padding: 5px;
+    border: 1px solid gray;
+}
+.box99 a {
+    color: #000;
+}
+/* 상품 더보기 버튼 */
+.box199 {
+    position: absolute;
+    right: 100px;
+    bottom: 0;
+    padding: 5px;
+    border: 1px solid gray;
+}
+.box199 a {
+    color: #000;
+}
+
+/* 상단 메뉴1 부분 */
+/* 1번 */
+.top-menu0 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #C4C4C4;
+
+    height: 56px;
+}
+
+.flexbox .block {
+    flex-grow: 1;
+}
+.inline-menu0 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+}
+.inline-menu0 a{
+    color: #000;
+}
+.inline-menu0 > li {
+    text-align: center;
+    justify-content: center;
+    padding: 18px 0;
+
+    /* height: 55px; */
+}
+.inline-menu0 li a {
+    font-size: 14px;
+    color: #676767;
+}
+.jointext {
+    font-weight: bold;
+}
+
+/* 메뉴 부분 1-1 */
+/* 2번 */
+.top-menu {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #C4C4C4;
+}
+.flexbox .block.top-menu {
+    width: 100%;
+
+    height: 57px;
+}
+
+/* 메뉴 부분 1-2 */
+/* 참고 */
+.flexbox main.block {
+    flex-basis: 906px;
+    min-height: 600px;
+}
+.flexbox .block {
+    flex-grow: 1;
+}
+.inline-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    justify-content: center; /* 메뉴바 정렬 */
+    align-items: center; /* 메뉴바 정렬 */
+}
+.inline-menu a{
+    color: #000;
+}
+.inline-menu > li {
+    text-align: center;
+    justify-content: center;
+    padding: 18px 0;
+
+    height: 56px;
+}
+/*** 직거래 메뉴 퀵메뉴 ***/
+
+
+/*** 폼 요소 디자인 ***/
+.timertxt * {
+    font-weight: bold;
+}
+.timertxt {
+    font-weight: bold;
+}
+
+/* 참고 */
+.bottom-link{
+    display: flex;
+    justify-content: center;
+}
+.bottom-link li{
+    margin-right: 20px;
+}
+@supports (display: flex){
+    .bottom-link li{
+        margin-right: 0;
+    }
+}
+
+/* 쇼핑몰 로고 부분 */
+ul.row > li {
+    text-align: center;
+}
+li.logo3{
+    height: 66px;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 7px;
+    font-weight: bold;
+    color: #ff6464;
+}
+li.logo4{
+    height: 28px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 7px;
+    font-weight: bold;
+    color: #ff6464;
+    margin-top: 15px;
+}
+ul{
+    margin: auto;
+    list-style:none;
+    padding-left:0px;
+}
+
+ul li img {
+    display:block;
+}
+
+ul.logo2{
+    padding: 0;
+}
+li.inlinetxt{
+    color: #fff;
+    margin-left: 30px;
+}
+
+/* 상품리스트 위의 목록1 */
+/* bottom info */
+.bottom-info30{
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap:5%;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    background: #FFF5F4;
+}
+.txt-sm30 span img{
+    display: block;
+}
+.bottom-info30 p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.txt-sm30 span a{
+    font-size: 96px;
+    font-weight: bold;
+    color: #ff6464;
+}
+/* common */
+.line{
+    width: 40px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 0;
+    text-align: left;
+}
+.center{
+    margin: 0 auto;
+}
+
+/* 상품리스트 위의 목록2 */
+/* bottom info */
+.bottom-info{
+    display: flex;
+    flex-wrap: nowrap;
+    gap:5%;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    background: #ff6464;
+}
+.txt-sm span img{
+    display: block;
+}
+.bottom-info p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.txt-sm span a{
+    color: #fff;
+}
+/* common */
+.line{
+    width: 40px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 0;
+    text-align: left;
+}
+.center{
+    margin: 0 auto;
+}
+
+/* 베스트 상품 로고 */
+/* 산딸기 상세페이지 */
+.inline-menu00 {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+.inline-menu00 > li {
+    text-align: center;
+    justify-content: center;
+    padding: 18px 0;
+    
+}
+.flexbox .block.top-menu00 {
+    width: 100%;
+}
+.top-menu00 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+/* .flexbox .block.top-menu00 {
+    width: 100%;
+} */
+
+/* 상품 목록 */
+.element ul:nth-of-type(4) {
+    padding-bottom: 100px;
+}
+
+.element {
+    width: 100%;
+}
+.element .multi-row {
+    text-align: center;
+}
+.element .grid4 {
+    display: flex;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 0;
+    gap: 30px;
+}
+.element ul {
+    padding: 0;
+}
+.element .grid4 > li{
+    flex-basis: 33.3333%;
+    flex-grow: 1;
+}
+
+.multi-row li {
+    float: left;
+}
+.thumbnail img{
+    width: 100%;
+    background-color: #fff;
+    display: block;
+}
+
+.pname {
+    height: 20px;
+}
+/* .pname {
+    margin-top: 10px;
+} */
+/* 텍스트 색상 바꾸기 */
+.pname a{
+    color: #000;
+}
+.fontsize a{
+    color: #000;
+}
+
+/* 베스트 리뷰 상품 부분 */
+/* block15 */
+.block15 {
+    display: flex;
+    gap: 30px;
+    padding: 100px;
+}
+.block15-box {
+    padding: 0;
+    flex: 1;
+    border: 1px solid lightgray;
+}
+.block15-box div {
+    margin: 0;
+    padding: 15px;
+    flex: 1;
+    /* text-align: center; */
+    
+}
+.block15-box div img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+/* .block15-box-color {
+    height: 300px;
+    background: lightgray;
+} */
+
+/* 베스트 리뷰 이미지 부분 */
+.block8-box-color {
+    height: 300px;
+    border-bottom: 1px solid lightgray;
+}
+
+/* 더보기 버튼 */
+.box {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 54px;
+    background: #ff6464;
+}
+.box a {
+    color:#fff;
+}
+.boxtxt1 {
+    font-weight: bold;
+}
+
+/* 인스타그램 이미지 부분 */
+/* block10 */
+.block10 {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.block10-box {
+    padding: 0;
+    flex: 1;
+}
+.block10-box div img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.block10-box-color {
+    height: 197.14px;
+    background: lightgray;
+}
+
+/* 푸터 왼쪽 부분 */
+/* block50 */
+.block50 {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #C4C4C4;
+}
+.block50-box {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    flex: 1;
+}
+.block50-box div {
+    margin: 0;
+    padding: 15px;
+    flex: 1;
+}
+.block50-box div img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.block50-box-color {
+    text-align: right;
+    flex-direction: column;
+}
+
+/* 푸터 오른쪽 부분 */
+/* block51 */
+.block51-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    flex: 1;
+}
+.block51-box div {
+    margin: 0;
+    padding: 15px;
+    flex: 1;
+}
+.block51-box div img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.block51-box-color {
+    text-align: left;
+    flex-direction: column;
+}
+
+/* 텍스트 */
+.boxcolortxt1 {
+    font-size: 36px;
+}
+.boxcolortxt5 {
+    font-size: 20px;
+}
+.boxcolortxt6 {
+    font-size: 36px;
+}
+.boxcolortxt8 {
+    font-size: 20px;
+}
+.boxcolortxt9 {
+    font-size: 36px;
+}
+
+.popupdiv {
+    display: flex;
+    height: 35px;
+    background-color: #ff6464;
+}
+
+/* 새로운 사이드메뉴 */
+/* 노멀라이즈 시작 */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;   /* 해당 태그의 list-style을 none으로 하는 것으로 ●을 제거한다 */
+  }
+  
+  a {
+    color: inherit;   /* 부모 엘리먼트의 값을 물려받는다 */
+    text-decoration: none;    /* 해당 태그의 text-decoration 속성을 none 값으로 하는 것으로 밑줄을 제거한다 */
+  }
+  /* 노멀라이즈 끝 */
+  
+  /* 커스텀 시작 */
+  .side-bar > ul ul {
+    display: none;
+  }
+  
+  /* 사이트의 높이를 5000px로 만들어 스크롤 생성 */
+  body {
+    height: 2233px;
+    /* background-color: #444; */
+  }
+  
+  /* 사이드바 시작 */
+  
+  /* 사이드바의 너비와 높이를 변수를 통해 통제 */
+  :root {
+    --side-bar-width: 270px;
+    --side-bar-height: 90vh;
+  }
+  
+  .side-bar {
+    z-index: 10; /* 위치값 설정 */
+    position: fixed;    /* 스크롤을 따라오도록 지정 */
+    background-color: #ff6464; /* 사이드바 색상 */
+    width: var(--side-bar-width);
+    min-height: var(--side-bar-height);   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
+    margin-top: calc((100vh - var(--side-bar-height)) / 2);    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
+  }
+  
+  /* 아이콘 시작 */
+  .side-bar__icon-box {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .side-bar__icon-1 {
+    position: relative;
+    width: 23px;
+    height: 17px;
+    margin: 15px;
+    margin-top: 20px;
+    transition: .5s;
+  }
+  
+  :root {
+    --side-bar__icon: .5s;
+  }
+  
+  .side-bar__icon-1 > div {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    transition: all var(--side-bar__icon);
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(1) {
+    top: 0;
+    width: auto;
+    left: 0;
+    right: 0;
+    transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), right calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), height calc(var(--side-bar__icon) / 2) 0s;
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(2) {
+    top: 40%;
+    transform-origin:bottom left;
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(3) {
+    top: 80%;
+    left: auto;
+    right: 0;
+    transform-origin:bottom right;
+  }
+  
+  
+  .side-bar:hover .side-bar__icon-1 {
+    transform: translate(-198px, 0);
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
+    transform:rotate(45deg);
+    width: 70.5%;
+    height: 25%;
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(3) {
+    top: 40%;
+    transform:rotate(-45deg);
+    width: 70.5%;
+    height: 25%;
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(1) {
+    left: 41%;
+    right: 41%;
+    height: 100%;
+    transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) 0s, right calc(var(--side-bar__icon) / 2) 0s, height calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2);
+  }
+  /* 아이콘 끝 */
+  
+  /* 모든 메뉴의 a에 속성값 부여 */
+  .side-bar ul > li > a {
+    display: block;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    transition: .5s;
+  }
+  
+  /* 자식의 position이 absolute일 때 자식을 영역 안에 가두어 준다 */
+  .side-bar > ul > li {
+    position: relative;
+  }
+  
+  /* 모든 메뉴가 마우스 인식 시 반응 */
+  .side-bar ul > li:hover > a {
+    background-color: #555;
+    border-bottom: 1px solid #999;
+  }
+  
+  /* 1차 메뉴의 항목이 마우스 인식 시에 2차 메뉴 등장 */
+  .side-bar > ul > li:hover > ul {
+    display: block;
+    position: absolute;
+    background-color: #888;
+    top: 0;         /* 2차 메뉴의 상단을 1차 메뉴의 상단에 고정 */
+    left: 100%;     /* 2차 메뉴를 1차 메뉴의 너비만큼 이동 */
+    width: 100%;    /* 1차 메뉴의 너비를 상속 */
+  }
+  
+  /* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
+  .side-bar {
+    border-radius: 20px;
+    transform: translate(calc(var(--side-bar-width) * -0.8), 0);
+    transition: .5s;
+  }
+  
+  /* 마우스 인식 시 원래의 위치로 이동 */
+  .side-bar:hover {
+    transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
+  }
+  /* 사이드바 끝 */
+  
+  /* 커스텀 끝 */
+
+.input {
+    border: none;
+    background: none;
+}
+/* 팝업창 버튼 지정 */
+#show {border: 1px solid gray; border-radius: 5px;}
+#close {border: 1px solid gray; border-radius: 5px;}
+
+/*** 반응형 내용 부분 갯수 줄이기 ***/
+@media screen and (max-width: 1200px){
+    .block15 div:nth-of-type(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .block10 div:nth-of-type(7) {
+        display: none;
+    }
+}
+@media screen and (max-width: 1050px){
+    .block10 div:nth-of-type(6) {
+        display: none;
+    }
+}

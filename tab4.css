@@ -1,0 +1,22 @@
+.main {
+    display: block;
+    /* width: 100%; */
+    /* margin: 100px auto; */
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.h2 {font-size: 24px; color: #000; letter-spacing: -0.5px; font-weight: normal; line-height: 1;}
+.tab {padding: 43px 0 50px;}
+.tab ul {display: flex; flex-wrap: wrap; border-top: 1px solid #ccc; border-left: 1px solid #ccc;}
+.tab ul li {width: 25%; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; box-sizing: border-box;}
+.tab ul li button {width: 100%; background: none; height: 58px; text-align: center; font-size: 18px; color: #666; box-sizing: border-box; outline: 0; cursor: pointer;}
+.tab ul li button:focus,
+.tab ul li.on button {border: 1px solid #222; color: #222; font-weight: bold;}
+.tab_content {display: none; border: 1px solid #ccc; text-align: center; font-size: 40px; color: #000;}
+.tab_content.on {display: block;}
+
+.ie9 .tab ul:after {content: ""; display: block; clear: both;}
+.ie9 .tab ul li {float: left;}
+
+.tab_group {padding-bottom: 100px;}
