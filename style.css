@@ -603,18 +603,21 @@ li.inlinetxt{
 /* 텍스트 */
 .boxcolortxt1 {
     font-size: 36px;
+    color: #ff6464;
 }
 .boxcolortxt5 {
     font-size: 20px;
 }
 .boxcolortxt6 {
     font-size: 36px;
+    color: #ff6464;
 }
 .boxcolortxt8 {
     font-size: 20px;
 }
 .boxcolortxt9 {
     font-size: 36px;
+    color: #ff6464;
 }
 
 .popupdiv {
@@ -791,7 +794,7 @@ body, ul, li {
     background: none;
 }
 /* 팝업창 버튼 지정 */
-#show {border: 1px solid gray; border-radius: 5px;}
+#show {border: 1px solid gray; border-radius: 5px; font-size: 14px;}
 #close {border: 1px solid gray; border-radius: 5px;}
 
 /*** 반응형 내용 부분 갯수 줄이기 ***/
